@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Profile Page</h1>
+    <img class="img"  [src]="user.image_url" >
+    <br>
+    <p>{{user.email}}</p>
+    <p>{{user.username}}</p>
+    <button mat-raised-button color="primary" (click)="logout()">Logout</button>
+</div>

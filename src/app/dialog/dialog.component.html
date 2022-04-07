@@ -1,0 +1,26 @@
+<h1 mat-dialog-title>{{actionBtn}} News Form</h1>
+
+
+<div mat-dialog-content>
+   <form [formGroup]="newsForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput placeholder="Title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>News info</mat-label>
+        <textarea formControlName="newsInfo" matInput ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category" placeholder="Category">
+            <mat-option value="0">Epidemiološke mjere</mat-option>
+            <mat-option value="1">Rad teretane i izvođenje treninga</mat-option>
+        </mat-select>
+    </mat-form-field>
+   </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancle</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addNews()">{{actionBtn}}</button>
+</div>

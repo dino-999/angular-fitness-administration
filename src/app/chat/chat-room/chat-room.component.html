@@ -1,0 +1,32 @@
+<div class="container" *ngIf="Chat" >
+
+
+  <div #chatBox class="chat" *ngIf="Messages && adminData && userData">
+
+
+    <div class="msg animated zoomInUp" *ngFor="let msg of Messages; trackBy: trackByCreated">
+
+      <div class="user">
+        <img class="img" *ngIf="msg.uid == adminData.id" [src]="adminData.image_url" >
+        <img class="img" *ngIf="msg.uid == userData.id" [src]="userData.image_url" > 
+      </div>
+
+
+      <div class="column" > 
+          <p class="username" *ngIf="msg.uid == adminData.id">{{ adminData.username }}</p>
+          <p class="username" *ngIf="msg.uid == userData.id">{{ userData.username }}</p>
+          <p class="content">{{ msg.text }}</p>
+          <!-- <p class="time">{{ msg.createdAt.toDate() | date:'shortTime' }}</p> -->
+      </div>
+   </div>
+
+
+
+  </div>
+
+    <div class="form">
+        <input class="input"  [(ngModel)]="newMsg" maxlength="100" (keydown.enter)="submit()">
+  
+        <button class="send" mat-raised-button color="primary" (click)="submit()" [disabled]="!newMsg">Send</button>
+      </div>
+</div>

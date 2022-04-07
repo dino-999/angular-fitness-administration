@@ -1,0 +1,13 @@
+<li *ngIf="chat && user" (click)="openChat()">
+    <div class="row">
+        <div class="col-md-1">
+            <img class="img"  [src]="user.image_url" >
+        </div>
+        <div class="col-md-11">
+            <div class="column">
+                <p class="username">{{ user.username}}</p>
+                <p class="email" >{{ user.email}}</p>
+            </div>
+        </div>
+    </div>
+</li>

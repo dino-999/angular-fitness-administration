@@ -1,0 +1,9 @@
+<div class="loading" *ngIf="isLoading"> <app-loading-spinner></app-loading-spinner></div>
+
+<div class="container" *ngIf="chats && !isLoading">
+  <ul>
+      <app-chat-item  *ngFor="let chat of chats"
+        [chat]="chat"
+       ></app-chat-item>
+  </ul>
+</div>

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title>{{actionBtn}} Training Date Form</h1>
+
+
+<div mat-dialog-content>
+   <form [formGroup]="trainingForm">
+    <mat-form-field appearance="outline">
+        <mat-label>Title</mat-label>
+        <input formControlName="title" matInput placeholder="Title">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Date of Training</mat-label>
+        <input formControlName="dateOfTraining" matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    
+    </mat-form-field>
+   </form>
+</div>
+<div mat-dialog-action [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Cancle</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" (click)="addTrainingDate()">{{actionBtn}}</button>
+</div>
